@@ -42,11 +42,11 @@ Pour exécuter ce projet localement, suivez les étapes suivantes :
 ## 6. Description des modèles
 Dans le cadre de ce projet, plusieurs architectures d'apprentissage automatique ont été testées pour gérer le déséquilibre des classes (les transactions frauduleuses étant généralement très rares) :
 
-** Régression Logistique : Modèle de référence (baseline).
+**Régression Logistique : Modèle de référence (baseline).
 
-** Random Forest / Extra Trees : Pour capturer les relations non linéaires.
+**Random Forest / Extra Trees : Pour capturer les relations non linéaires.
 
-** XGBoost / LightGBM : Algorithmes de boosting de gradient pour optimiser les performances de classification.
+**XGBoost / LightGBM : Algorithmes de boosting de gradient pour optimiser les performances de classification.
 
 💡 Note : Des techniques de rééchantillonnage (comme SMOTE) ou d'ajustement des poids des classes ont été appliquées pour contrer le déséquilibre des données.
 
