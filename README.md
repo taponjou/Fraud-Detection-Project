@@ -192,9 +192,8 @@ Les notebooks doivent être exécutés dans l'ordre suivant :
 3. Régression Logistique
 4. Random Forest
 5. XGBoost
-6. Optimisation du MLP
-7. Entraînement du MLP final
-8. Comparaison des modèles
+6. MLP 
+7. Comparaison des modèles
 
 ---
 
