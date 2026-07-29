@@ -49,8 +49,8 @@ Fraud-Detection-Project/
 │   ├── Random_Forest_metrics.csv
 │   ├── XGBoost_metrics.csv
 │   ├── MLP_metrics.csv
-│   └── Comparison_metrics.csv
-├── figures/
+│   ├── Comparison_metrics.csv
+|   └── Fichiers.csv(pour analyse des métriques)
 │
 ├── requirements.txt
 │
