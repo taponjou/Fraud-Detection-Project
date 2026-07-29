@@ -1,61 +1,277 @@
-# Détection des fraudes bancaires par apprentissage automatique
+# 🛡️ Détection de Fraudes Bancaires à l'aide du Machine Learning et du Deep Learning
 
-## 1. Introduction
-Ce projet porte sur la détection des fraudes bancaires à l'aide des techniques de machine learning. L'objectif est de développer un modèle capable d'identifier automatiquement les transactions frauduleuses à partir d'un ensemble de données provenant de Kaggle, accessible via le lien suivant : [Financial Transaction Fraud Dataset](https://www.kaggle.com/datasets/algozee/financial-transaction-fraud-dataset/code).
+## 📖 Présentation du projet
 
----
+Ce projet a pour objectif de développer et de comparer plusieurs modèles de Machine Learning et de Deep Learning afin de détecter les transactions bancaires frauduleuses.
 
-## 2. Présentation du jeu de données
-L'ensemble de données contient des enregistrements de transactions bancaires comprenant des informations telles que :
-* **Montant et temporalité :** Le montant de la transaction, la date et l'heure.
-* **Comportement et contexte :** La catégorie du commerçant, la localisation du client et la fréquence des transactions.
-* **Technologie :** Des informations sur l'appareil utilisé.
-* **Cible :** Chaque enregistrement comprend une étiquette (*label*) indiquant si la transaction est normale ou frauduleuse.
+Le projet suit l'ensemble du cycle de vie d'un projet de Data Science, depuis l'exploration des données jusqu'à l'évaluation et la comparaison des modèles.
 
-Cet ensemble de données simule des comportements réalistes afin de permettre le développement et l'évaluation de modèles de détection des fraudes et de surveillance des risques dans le secteur financier.
+Les modèles développés comprennent :
 
----
-
-## 3. Technologies utilisées
-* **Langage :** Python 3.10+
-* **Environnement :** Jupyter Notebook / Google Colab
-* **Librairies Principales :**
-  * Manipulations de données : `pandas`, `numpy`
-  * Visualisation : `matplotlib`, `seaborn`
-  * Machine Learning : `scikit-learn`, `xgboost`, `lightgbm` (à adapter selon vos modèles)
+- Régression Logistique
+- Random Forest
+- XGBoost
+- Réseau de neurones Multi-Layer Perceptron (MLP) avec PyTorch
 
 ---
 
-## 4. Installation
-Pour exécuter ce projet localement, suivez les étapes suivantes :
+# 🎯 Objectifs
 
-1. **Cloner le dépôt :**
-   ```bash
-   git clone [https://github.com/taponjou/Fraud-Detection-Project.git](https://github.com/taponjou/Fraud-Detection-Project.git)
-   cd Fraud-Detection-Project
-   
----
-## 5.  Structure du projet
+Les principaux objectifs de ce projet sont :
 
----
-
-## 6. Description des modèles
-Dans le cadre de ce projet, plusieurs architectures d'apprentissage automatique ont été testées pour gérer le déséquilibre des classes (les transactions frauduleuses étant généralement très rares) :
-
-**Régression Logistique : Modèle de référence (baseline).
-
-**Random Forest / Extra Trees : Pour capturer les relations non linéaires.
-
-**XGBoost / LightGBM : Algorithmes de boosting de gradient pour optimiser les performances de classification.
-
-💡 Note : Des techniques de rééchantillonnage (comme SMOTE) ou d'ajustement des poids des classes ont été appliquées pour contrer le déséquilibre des données.
+- Explorer et comprendre les données transactionnelles.
+- Prétraiter les données pour les rendre exploitables.
+- Traiter le déséquilibre des classes.
+- Développer plusieurs modèles de classification.
+- Optimiser un réseau de neurones MLP.
+- Comparer les performances des différents modèles.
+- Identifier le modèle offrant les meilleures performances pour la détection des fraudes.
 
 ---
 
-## 7. Résultats
-Les performances sont évaluées principalement sur le Recall (pour minimiser les faux négatifs) et l'AUC-ROC.
+# 📂 Structure du projet
+
+```text
+Fraud-Detection-Project/
+│
+├── data/
+│   ├── raw/
+│   └── processed/
+│
+├── notebooks/
+│   ├── 01_Data_Exploration.ipynb
+│   ├── 02_Data_Preprocessing.ipynb
+│   ├── 03_Logistic_Regression.ipynb
+│   ├── 04_Random_Forest.ipynb
+│   ├── 05_XGBoost.ipynb
+│   ├── 08_MLP.ipynb
+│   └── 07_Model_Comparison.ip
+│
+├── models/
+│
+├── results/
+│
+├── figures/
+│
+├── requirements.txt
+│
+└── README.md
+```
 
 ---
 
-## Auteur
-. Taponjou - @taponjou
+# 📊 Jeu de données
+
+Le projet utilise un jeu de données simulant des transactions bancaires.
+
+Le jeu de données contient :
+
+- des transactions légitimes ;
+- des transactions frauduleuses ;
+- plusieurs variables décrivant les clients, les comptes et les transactions.
+
+---
+
+# ⚙️ Prétraitement des données
+
+Le pipeline de préparation comprend :
+
+- Nettoyage des données
+- Gestion des valeurs manquantes
+- Encodage des variables catégorielles
+- Encodage cyclique des variables temporelles
+- Standardisation avec StandardScaler
+- Séparation Train / Validation / Test
+- Création des DataLoader PyTorch
+
+---
+
+# 🤖 Modèles développés
+
+## Machine Learning
+
+- Régression Logistique
+- Random Forest
+- XGBoost
+
+## Deep Learning
+
+### Multi-Layer Perceptron (MLP)
+
+Architecture finale :
+
+```text
+Entrée (45 variables)
+        │
+Couche cachée (64 neurones)
+        │
+ReLU
+        │
+Dropout (0.5)
+        │
+Couche de sortie (Sigmoid)
+```
+
+### Hyperparamètres retenus
+
+| Paramètre | Valeur |
+|-----------|--------|
+| Architecture | [64] |
+| Learning Rate | 0.0001 |
+| Dropout | 0.5 |
+| Weight Decay | 0.001 |
+| Optimiseur | Adam |
+| Fonction de perte | BCEWithLogitsLoss |
+| Scheduler | ReduceLROnPlateau |
+| Early Stopping | Oui |
+
+---
+
+# 📈 Métriques d'évaluation
+
+Les modèles sont évalués à l'aide des métriques suivantes :
+
+- Accuracy
+- Precision
+- Recall
+- F1-score
+- ROC-AUC
+- Matrice de confusion
+- Courbe ROC
+- Courbe Precision-Recall
+
+---
+
+# 🚀 Installation
+
+## Cloner le dépôt
+
+```bash
+git clone https://github.com/votre-utilisateur/Fraud-Detection-Project.git
+```
+
+## Se déplacer dans le projet
+
+```bash
+cd Fraud-Detection-Project
+```
+
+## Créer un environnement virtuel
+
+```bash
+python -m venv .venv
+```
+
+## Activer l'environnement
+
+### Windows
+
+```bash
+.venv\Scripts\activate
+```
+
+### Linux / macOS
+
+```bash
+source .venv/bin/activate
+```
+
+## Installer les dépendances
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+# ▶️ Exécution
+
+Les notebooks doivent être exécutés dans l'ordre suivant :
+
+1. Exploration des données
+2. Prétraitement des données
+3. Régression Logistique
+4. Random Forest
+5. XGBoost
+6. Optimisation du MLP
+7. Entraînement du MLP final
+8. Comparaison des modèles
+
+---
+
+# 📊 Résultats
+
+Chaque modèle est évalué selon les mêmes métriques afin de garantir une comparaison équitable.
+
+Le modèle final est sélectionné principalement selon :
+
+- le ROC-AUC ;
+- le Recall ;
+- le F1-score ;
+- la Precision.
+
+Les résultats finaux sont regroupés dans le notebook **08_Model_Comparison.ipynb**.
+
+---
+
+# 🛠️ Technologies utilisées
+
+- Python
+- Pandas
+- NumPy
+- Scikit-learn
+- PyTorch
+- XGBoost
+- Matplotlib
+- tqdm
+- Jupyter Notebook
+- Git & GitHub
+
+---
+
+# 🔄 Pipeline du projet
+
+```text
+Jeu de données
+       │
+       ▼
+Exploration des données
+       │
+       ▼
+Prétraitement
+       │
+       ▼
+Feature Engineering
+       │
+       ▼
+Machine Learning
+       │
+       ├── Régression Logistique
+       ├── Random Forest
+       ├── XGBoost
+       │
+       ▼
+Deep Learning (MLP)
+       │
+       ▼
+Comparaison des modèles
+       │
+       ▼
+Sélection du meilleur modèle
+```
+
+---
+
+# 👨‍💻 Auteur
+
+**Carlos Taponjou**
+
+Étudiant à la maîtrise en science des données
+
+Université TÉLUQ
+
+---
+
+# 📄 Licence
+
+Ce projet a été réalisé dans un contexte académique dans le cadre d'un projet de maîtrise. Il est destiné à des fins éducatives et de démonstration.
