@@ -34,9 +34,7 @@ Les principaux objectifs de ce projet sont :
 ```text
 Fraud-Detection-Project/
 │
-├── data/
-│   ├── raw/
-│   └── processed/
+├── clean_data 
 │
 ├── notebooks/
 │   ├── 01_Data_Exploration.ipynb
@@ -46,11 +44,12 @@ Fraud-Detection-Project/
 │   ├── 05_XGBoost.ipynb
 │   ├── 08_MLP.ipynb
 │   └── 07_Model_Comparison.ip
-│
-├── models/
-│
 ├── results/
-│
+│   ├── Logistic_regression_metrics.csv
+│   ├── Random_Forest_metrics.csv
+│   ├── XGBoost_metrics.csv
+│   ├── MLP_metrics.csv
+│   └── Comparison_metrics.csv
 ├── figures/
 │
 ├── requirements.txt
@@ -264,7 +263,7 @@ Sélection du meilleur modèle
 
 # 👨‍💻 Auteur
 
-**Carlos Taponjou**
+**Carlos Gael Taponjou Kenfack**
 
 
 # 📄 Licence
