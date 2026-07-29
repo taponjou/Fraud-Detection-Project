@@ -223,6 +223,7 @@ Les résultats finaux sont regroupés dans le notebook **08_Model_Comparison.ipy
 - Matplotlib
 - tqdm
 - Jupyter Notebook
+- ydata-profiling
 - Git & GitHub
 
 ---
