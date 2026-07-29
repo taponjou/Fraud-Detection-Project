@@ -42,7 +42,7 @@ Fraud-Detection-Project/
 │   ├── 03_Logistic_Regression.ipynb
 │   ├── 04_Random_Forest.ipynb
 │   ├── 05_XGBoost.ipynb
-│   ├── 08_MLP.ipynb
+│   ├── 06_MLP.ipynb
 │   └── 07_Model_Comparison.ip
 ├── results/
 │   ├── Logistic_regression_metrics.csv
