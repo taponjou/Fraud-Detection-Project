@@ -266,12 +266,7 @@ Sélection du meilleur modèle
 
 **Carlos Taponjou**
 
-Étudiant à la maîtrise en science des données
-
-Université TÉLUQ
-
----
 
 # 📄 Licence
 
-Ce projet a été réalisé dans un contexte académique dans le cadre d'un projet de maîtrise. Il est destiné à des fins éducatives et de démonstration.
+Ce projet a été réalisé dans un contexte académique dans le cadre d'un projet du Certificat en DataScience. Il est destiné à des fins éducatives et de démonstration.
